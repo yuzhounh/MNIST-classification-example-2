@@ -1,18 +1,35 @@
-Classify the MNIST data by linear SVM in Scikit-learn.
-Copyright (C) 2017 Jing Wang
+# MNIST Classification Example — scikit-learn
 
-The classification accuracy (94.04%) is terribly low compared to deep 
-learning methods. However, it is a start. 
-https://www.tensorflow.org/get_started/mnist/beginners
+Classify handwritten MNIST digits with scikit-learn's linear-kernel SVM.
 
-Data and softwares:
-The MNIST data (http://yann.lecun.com/exdb/mnist/)
-Python 3.5.2
-TensorFlow 1.0.1
-Scikit-learn 0.17.1
-Numpy 1.11.1
+[GPL-3.0 license](LICENSE)
 
-Usage:
-Run classify_MNIST.py
+## Quick Start
 
-2017-3-15 09:36:34
+This is a historical example. Its source imports `tensorflow.examples.tutorials.mnist.input_data`; an environment providing that legacy module is required before running the unchanged script.
+
+1. Prepare an environment compatible with the originally documented Python 3.5.2, TensorFlow 1.0.1, scikit-learn 0.17.1, and NumPy 1.11.1.
+2. From the repository directory, run:
+
+```bash
+python classify_MNIST.py
+```
+
+The TensorFlow loader obtains MNIST in `MNIST_data/`. The script combines training and validation samples, trains `svm.SVC(kernel='linear', C=1.0)`, and prints test accuracy and elapsed time.
+
+## Reproducibility Notes
+
+The original documentation reports 94.04% accuracy. This is a historical result, not a new validation. Dependency versions and download availability have not been tested against a current environment; the legacy loader must be addressed when modernizing the script.
+
+## Repository Structure
+
+- [classify_MNIST.py](classify_MNIST.py): dataset loading, model fitting, and evaluation.
+- [LICENSE](LICENSE): existing license terms.
+- `MNIST_data/`: data cache created by the loader at runtime.
+
+## License
+
+See the existing [GNU General Public License, version 3](LICENSE). Retain the notices in the source files and in bundled third-party material.
+
+Copyright (C) 2017 Jing Wang.
+
